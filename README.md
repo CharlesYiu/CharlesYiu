@@ -10,7 +10,7 @@ I've started to code in 2 years ago. During my time, I have progressed from maki
 *   🖥️  See my website at [charr.cc](http://charr.cc)
 *   ✉️  You can contact me at [me@charr.cc](mailto:me@charr.cc)
 *   🚀  I'm currently working on [Draw](http://draw.charr.cc)
-*   🧠  I'm learning TypeScript
+*   🧠  I'm learning Rust (slowly but surely)
 *   🤝  I'm open to collaborating on websites, apps, or anything that interests me  
 ### Skills
 <p align="left">
