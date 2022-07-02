@@ -1,0 +1,97 @@
+<!-- 
+	Note: 
+	Replace all my pages that use 'charlesyiu.github.io/favicon.ico'
+	with 's.charr.cc/favicon.ico' and delete /favicon.ico when done.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>charles yiu</title>
+	<link rel="shortcut icon" href="https://s.charr.cc/favicon.ico">
+	<style>
+		* {
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+			text-align: center;
+		}
+		body { margin-top: 100px; }
+		h1 { font-size: 48px; }
+		a, button {
+			font-size: 16px;
+			color: black;
+			transition-duration: 0.1s;
+			text-decoration: none;
+		}
+		button {
+			background: none;
+			border: none;
+		}
+		a:hover, button:hover { cursor: pointer; }
+		a:active, button:active { color: gray; }
+		div {
+			line-height: 34px;
+			-webkit-touch-callout: none; /* iOS Safari */
+			-webkit-user-select: none; /* Safari */
+			-khtml-user-select: none; /* Konqueror HTML */
+			-moz-user-select: none; /* Old versions of Firefox */
+			-ms-user-select: none; /* Internet Explorer/Edge */
+			user-select: none;
+		}
+	</style>
+</head>
+<body>
+	<h1>charles yiu</h1>
+	<div id="places">
+		<a href="https://to.charr.cc/github" target="_blank" rel="noopener noreferrer" class="place">github/charlesyiu</a><br>
+		<a href="https://to.charr.cc/twitter" target="_blank" rel="noopener noreferrer" class="place">twitter/charlesyiu_</a><br>
+        <a href="https://www.npmjs.com/~charlesyiu" target="_blank" rel="noopener noreferrer" class="place">npm/charlesyiu</a><br>
+		<!-- <a href="https://to.charr.cc/blog" target="_blank" rel="noopener noreferrer" id="blog">blog.charr.cc</a><br> -->
+		<button id="email" onclick="copyEmail();" class="place">me@charr.cc</button><br>
+        <h2>some links</h2>
+        <a href="https://to.charr.cc/pages" target="_blank" rel="noopener noreferrer" class="place">mini webpages</a><br>
+        <a href="https://to.charr.cc/draw" target="_blank" rel="noopener noreferrer" class="place">draw</a>
+	</div>
+	<script>
+		var email = 'me@charr.cc';
+		var emailElement = document.getElementById('email');
+		function copyEmail() {
+			navigator.clipboard.writeText(email);
+			emailElement.textContent = 'Copied Email';
+			setTimeout(() => {
+				emailElement.textContent = email;
+			}, 1000);
+		}
+		var selections = document.getElementsByClassName("place");
+		var currentSelectionIndex = NaN;
+		window.onkeydown = event => {
+			event = event || window.event;
+			if (event.code == "Tab") {
+				event.preventDefault();
+				currentSelectionIndex = isNaN(currentSelectionIndex) ? 0 : currentSelectionIndex >= selections.length - 1 ? 0 : currentSelectionIndex + 1;
+				for (var selectionIndex = 0; selectionIndex < selections.length; selectionIndex++) {
+					if (selectionIndex == currentSelectionIndex) selections.item(currentSelectionIndex).style.color = "gray";
+					else selections.item(selectionIndex).style.color = "black";
+				}
+				document.body.style.cursor = "none";
+			} else if (event.code == "Enter") {
+				event.preventDefault();
+				if (isNaN(currentSelectionIndex)) {
+					currentSelectionIndex = 0;
+					return selections.item(0).style.color = "gray";
+				}
+				selections.item(currentSelectionIndex).click();
+				document.body.style.cursor = "none";
+			}
+		};
+		window.onmousemove = event => {
+			document.body.style.cursor = "auto";
+			currentSelectionIndex = NaN;
+			for (var selectionIndex = 0; selectionIndex < selections.length; selectionIndex++) {
+				selections.item(selectionIndex).style.color = "black";
+			}
+		};
+	</script>
+</body>
+</html>
