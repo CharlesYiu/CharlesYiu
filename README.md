@@ -7,10 +7,8 @@ A student who is learning web development
 I've started to code in 2 years ago. During my time, I have progressed from making simple terminal applications to creating usable websites with HTML, CSS, and JS.
 
 *   🌍  I'm based in Hong Kong
-*   🖥️  See my website at [charr.cc](http://charr.cc)
-*   ✉️  You can contact me at [me@charr.cc](mailto:me@charr.cc)
-*   🚀  I'm currently working on [Draw](http://draw.charr.cc)
-*   🧠  I'm learning Rust (slowly but surely)
+*   🖥️  See my website at [charr.cc](https://yiu.ch)
+*   ✉️  You can contact me at [me@charr.cc](mailto:me@yiu.ch)
 *   🤝  I'm open to collaborating on websites, apps, or anything that interests me  
 ### Skills
 <p align="left">
