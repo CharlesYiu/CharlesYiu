@@ -1,64 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>charles yiu</title>
-	<script> if (window.location.hostname.endsWith(".pages.dev")) window.location.href = "https://yiu.ch"; </script>
+    <title>charles</title>
+	<meta name="og:title" content="charles yiu">
+	<meta name="description" content="find socials and accounts for charles yiu">
+	<meta name="og:description" content="find socials and accounts for charles yiu">
+	<meta name="twitter:creator" content="@charlesyiu_">
+	<meta name="twitter:card" content="find my socials">
+	<script> if (!["yiu.ch", "localhost"].includes(location.hostname)) { window.location.href = "https://yiu.ch"; }; </script>
 	<link rel="shortcut icon" href="https://yiu.ch/favicon.ico">
 	<style>
 		* {
 			font-family: Verdana, Geneva, Tahoma, sans-serif;
 			text-align: center;
 		}
-		body { margin-top: 100px; }
-		h1 { font-size: 48px; }
-		a, button {
+		html, body {
+			height: 100%;
+			padding: 0;
+			margin: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-flow: column;
+		}
+		body > h1 {
+			font-size: 48px;
+			line-height: 20px;
+		}
+		body > div { line-height: 34px; }
+		body > div > a {
 			font-size: 16px;
-			color: black;
+			color: hsl(0, 0%, 0%);
 			transition-duration: 0.1s;
 			text-decoration: none;
 		}
-		button {
-			background: none;
-			border: none;
-		}
-		a:hover, button:hover { cursor: pointer; }
-		a:active, button:active { color: gray; }
-		div {
-			line-height: 34px;
-			-webkit-touch-callout: none; /* iOS Safari */
-			-webkit-user-select: none; /* Safari */
-			-khtml-user-select: none; /* Konqueror HTML */
-			-moz-user-select: none; /* Old versions of Firefox */
-			-ms-user-select: none; /* Internet Explorer/Edge */
-			user-select: none;
+		body > div > a:hover { text-decoration: underline; }
+		body > div > a:active {
+			color: hsl(0, 0%, 50%);
+			text-decoration: none;
 		}
 	</style>
 </head>
 <body>
-	<h1>charles yiu</h1>
-	<div id="places">
-		<a href="https://github.com/charlesyiu" target="_blank" rel="noopener noreferrer" class="place">github/charlesyiu</a><br>
-		<a href="https://twitter.com/charlesyiu_" target="_blank" rel="noopener noreferrer" class="place">twitter/charlesyiu_</a><br>
-        <a href="https://www.npmjs.com/~charlesyiu" target="_blank" rel="noopener noreferrer" class="place">npm/charlesyiu</a><br>
-		<button id="email" onclick="copyEmail();" class="place">me@yiu.ch</button><br>
-        <h2>some links</h2>
-        <a href="https://pg.yiu.ch" target="_blank" rel="noopener noreferrer" class="place">mini webpages</a><br>
-        <a href="https://draw.yiu.ch" target="_blank" rel="noopener noreferrer" class="place">draw</a>
+	<h1>charles</h1>
+	<div>
+		<a href="https://twitter.com/charlesyiu_" rel="noopener">twitter</a>
+		<a href="https://wa.me/12265333668" rel="noopener">whatsapp</a><br>
+		<a href="https://t.me/charlesyiu" rel="noopener">telegram</a>
+		<a href="https://www.npmjs.com/~charlesyiu" rel="noopener">npm</a><br>
+		<a href="https://github.com/charlesyiu" rel="noopener">github</a>
+		<a href="https://signal.me/#p/12265333668" rel="noopener">signal</a><br>
+		<a href="mailto:w@yiu.ch" rel="noopener">w@yiu.ch</a><br>
 	</div>
-	<script>
-		var email = 'me@yiu.ch';
-		var emailElement = document.getElementById('email');
-		function copyEmail() {
-			navigator.clipboard.writeText(email);
-			emailElement.textContent = 'Copied Email';
-			setTimeout(() => {
-				emailElement.textContent = email;
-			}, 1000);
-		}
-		var selections = document.getElementsByClassName("place");
+	<script defer>
+		var selections = document.querySelectorAll("div > a");
 		var currentSelectionIndex = NaN;
 		window.onkeydown = event => {
 			event = event || window.event;
@@ -67,14 +65,14 @@
 				currentSelectionIndex = isNaN(currentSelectionIndex) ? 0 : currentSelectionIndex >= selections.length - 1 ? 0 : currentSelectionIndex + 1;
 				for (var selectionIndex = 0; selectionIndex < selections.length; selectionIndex++) {
 					if (selectionIndex == currentSelectionIndex) selections.item(currentSelectionIndex).style.color = "gray";
-					else selections.item(selectionIndex).style.color = "black";
+					else selections.item(selectionIndex).style.color = "hsl(0, 0%, 0%)";
 				}
 				document.body.style.cursor = "none";
-			} else if (event.code == "Enter") {
+			} else if (event.code == "Enter" || event.code == "Space") {
 				event.preventDefault();
 				if (isNaN(currentSelectionIndex)) {
 					currentSelectionIndex = 0;
-					return selections.item(0).style.color = "gray";
+					return selections.item(0).style.color = "hsl(0, 0%, 50%)";
 				}
 				selections.item(currentSelectionIndex).click();
 				document.body.style.cursor = "none";
@@ -83,9 +81,7 @@
 		window.onmousemove = event => {
 			document.body.style.cursor = "auto";
 			currentSelectionIndex = NaN;
-			for (var selectionIndex = 0; selectionIndex < selections.length; selectionIndex++) {
-				selections.item(selectionIndex).style.color = "black";
-			}
+			for (var selectionIndex = 0; selectionIndex < selections.length; selectionIndex++) { selections.item(selectionIndex).style.color = "black"; }
 		};
 	</script>
 </body>

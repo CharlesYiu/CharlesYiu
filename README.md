@@ -7,8 +7,8 @@ A student who is learning web development
 I've started to code in 2 years ago. During my time, I have progressed from making simple terminal applications to creating usable websites with HTML, CSS, and JS.
 
 *   🌍  I'm based in Hong Kong
-*   🖥️  See my website at [charr.cc](https://yiu.ch)
-*   ✉️  You can contact me at [me@charr.cc](mailto:me@yiu.ch)
+*   🖥️  See my website at [yiu.ch](https://yiu.ch)
+*   ✉️  You can contact me at [me@yiu.ch](mailto:me@yiu.ch)
 *   🤝  I'm open to collaborating on websites, apps, or anything that interests me  
 ### Skills
 <p align="left">
