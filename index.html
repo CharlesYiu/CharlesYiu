@@ -11,7 +11,10 @@
 	<meta name="twitter:creator" content="@charlesyiu_">
 	<meta name="twitter:card" content="find my socials">
 	<script> if (!["yiu.ch", "localhost"].includes(location.hostname)) { window.location.href = "https://yiu.ch"; }; </script>
-	<link rel="shortcut icon" href="https://yiu.ch/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple.png?v=5">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/32x32.png?v=5">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon/16x16.png?v=5">
+	<link rel="manifest" href="/site.webmanifest">
 	<style>
 		* {
 			font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -37,12 +40,49 @@
 			transition-duration: 0.1s;
 			text-decoration: none;
 		}
-		body > div > a:hover { text-decoration: underline; }
+		body > div > a:hover { text-decoration: underline !important; }
 		body > div > a:active {
 			color: hsl(0, 0%, 50%);
 			text-decoration: none;
 		}
 	</style>
+	<script>
+		window.onload = () => {
+			var selections = document.querySelectorAll("div > a");
+			var currentSelectionIndex = NaN;
+			window.onkeydown = event => {
+				event = event || window.event;
+				if (event.code == "Tab") {
+					event.preventDefault();
+					currentSelectionIndex = isNaN(currentSelectionIndex) ? 0 : currentSelectionIndex >= selections.length - 1 ? 0 : currentSelectionIndex + 1;
+					for (var selectionIndex = 0; selectionIndex < selections.length; selectionIndex++) {
+						if (selectionIndex == currentSelectionIndex) selections.item(currentSelectionIndex).style.textDecoration = "underline";
+						else selections.item(selectionIndex).style.textDecoration = "none";
+					}
+					document.body.style.cursor = "none";
+					document.body.style.pointerEvents = "none";
+				} else if (event.code == "Enter" || event.code == "Space") {
+					event.preventDefault();
+					if (isNaN(currentSelectionIndex)) {
+						currentSelectionIndex = 0;
+						return selections.item(0).style.textDecoration = "underline";
+					}
+					var target = selections.item(currentSelectionIndex);
+					target.click();
+					target.style.color = "hsl(0, 0%, 50%)";
+					setTimeout(() => { target.style.color = "hsl(0, 0%, 0%)"; }, 750);
+					document.body.style.cursor = "none";
+					document.body.style.pointerEvents = "none";
+				}
+			};
+			window.onmousemove = event => {
+				document.body.style.cursor = "auto";
+				document.body.style.pointerEvents = "auto";
+				currentSelectionIndex = NaN;
+				for (var selectionIndex = 0; selectionIndex < selections.length; selectionIndex++) { selections.item(selectionIndex).style.textDecoration = "none"; }
+			};
+		};
+	</script>
 </head>
 <body>
 	<h1>charles</h1>
@@ -55,34 +95,5 @@
 		<a href="https://signal.me/#p/12265333668" rel="noopener">signal</a><br>
 		<a href="mailto:w@yiu.ch" rel="noopener">w@yiu.ch</a><br>
 	</div>
-	<script defer>
-		var selections = document.querySelectorAll("div > a");
-		var currentSelectionIndex = NaN;
-		window.onkeydown = event => {
-			event = event || window.event;
-			if (event.code == "Tab") {
-				event.preventDefault();
-				currentSelectionIndex = isNaN(currentSelectionIndex) ? 0 : currentSelectionIndex >= selections.length - 1 ? 0 : currentSelectionIndex + 1;
-				for (var selectionIndex = 0; selectionIndex < selections.length; selectionIndex++) {
-					if (selectionIndex == currentSelectionIndex) selections.item(currentSelectionIndex).style.color = "gray";
-					else selections.item(selectionIndex).style.color = "hsl(0, 0%, 0%)";
-				}
-				document.body.style.cursor = "none";
-			} else if (event.code == "Enter" || event.code == "Space") {
-				event.preventDefault();
-				if (isNaN(currentSelectionIndex)) {
-					currentSelectionIndex = 0;
-					return selections.item(0).style.color = "hsl(0, 0%, 50%)";
-				}
-				selections.item(currentSelectionIndex).click();
-				document.body.style.cursor = "none";
-			}
-		};
-		window.onmousemove = event => {
-			document.body.style.cursor = "auto";
-			currentSelectionIndex = NaN;
-			for (var selectionIndex = 0; selectionIndex < selections.length; selectionIndex++) { selections.item(selectionIndex).style.color = "black"; }
-		};
-	</script>
 </body>
 </html>
