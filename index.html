@@ -46,10 +46,11 @@
 			object-fit: contain;
 		}
 
-		section.contacts > div.twitter { background-color: hsl(211, 74%, 59%); }
-		section.contacts > div.whatsapp { background-color: hsl(132, 69%, 65%); }
-		section.contacts > div.gmail { background-color: hsl(7, 60%, 52%); }
+		section.contacts > div.twitter { background-color: hsl(209, 74%, 59%); }
+		section.contacts > div.whatsapp { background-color: hsl(132, 68%, 65%); }
+		section.contacts > div.gmail { background-color: hsl(7, 67%, 55%); }
 		section.contacts > div.github { background-color: hsl(0, 0%, 0%); }
+		section.contacts > div.discord { background-color: hsl(236, 77%, 64%); }
 		section.contacts > div {
 			width: fit-content;
 			padding: 2vw;
@@ -146,6 +147,11 @@
 			transition-property: opacity;
 		}
 		.clickable:hover { opacity: 0.65; }
+
+		.spacer {
+			height: 75px;
+			width: 100%;
+		}
 	</style>
 </head>
 <body>
@@ -167,6 +173,10 @@
 			<div class="clickable github">
 				<img draggable="false" src="/assets/logo/github.png" alt="github's logo">
 				<a href="https://github.com/charlesyiu" rel="noopener">github</a>
+			</div>
+			<div class="clickable discord">
+				<img draggable="false" src="/assets/logo/discord.png" alt="discord's logo">
+				<a href="https://discord.gg/qnt8vgFW9D" rel="noopener">github</a>
 			</div>
 			<script>
 				(() => {
@@ -203,6 +213,7 @@
 				})();
 			</script>
 		</section>
+		<div class="spacer"></div>
 	</main>
 	<footer>
 		<p>
