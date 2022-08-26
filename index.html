@@ -10,7 +10,7 @@
 	<meta name="og:description" content="find socials and accounts for charles yiu">
 	<meta name="twitter:creator" content="@charlesyiu_">
 	<meta name="twitter:card" content="find my socials">
-	<script> if (!["yiu.ch", "localhost"].includes(location.hostname)) { window.location.href = "https://yiu.ch"; }; </script>
+	<script> if (!["yiu.ch", "localhost"].includes(location.hostname) && !location.hostname.startsWith("192.168.")) { window.location.href = "https://yiu.ch"; }; </script>
 	<link rel="apple-touch-icon" sizes="180x180" href="/assets/icon/apple.png?v=5">
 	<link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/32x32.png?v=5">
 	<link rel="icon" type="image/png" sizes="16x16" href="/assets/icon/16x16.png?v=5">
@@ -168,6 +168,16 @@
 				<img draggable="false" src="/assets/logo/github.png" alt="github's logo">
 				<a href="https://github.com/charlesyiu" rel="noopener">github</a>
 			</div>
+			<script>
+				(() => {
+					const contacts = document.currentScript.parentElement.children;
+					for (let index = 0; index < contacts.length; index++) contacts.item(index).addEventListener("click", event => {
+						const link = event.target.querySelector("a") ?? event.target.nextElementSibling;
+						if (link === null) return
+						link.click();
+					});
+				})();
+			</script>
 		</section>
 		<section class="clickable activity" hidden>
 			<img class="date" src="/assets/activity-date.png" draggable="false"/>
@@ -186,7 +196,7 @@
 					}
 					parentElement.querySelector("img.date").addEventListener("load", () => elementLoaded("date"));
 					parentElement.querySelector("img.main").addEventListener("load", () => elementLoaded("main"));
-				})()
+				})();
 			</script>
 		</section>
 	</main>
