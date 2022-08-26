@@ -196,6 +196,10 @@
 					}
 					parentElement.querySelector("img.date").addEventListener("load", () => elementLoaded("date"));
 					parentElement.querySelector("img.main").addEventListener("load", () => elementLoaded("main"));
+					setTimeout(() => {
+						elementLoaded("date");
+						elementLoaded("main");
+					}, 7500);
 				})();
 			</script>
 		</section>
