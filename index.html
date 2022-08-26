@@ -4,96 +4,196 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>charles</title>
+    <title>charles yiu</title>
 	<meta name="og:title" content="charles yiu">
 	<meta name="description" content="find socials and accounts for charles yiu">
 	<meta name="og:description" content="find socials and accounts for charles yiu">
 	<meta name="twitter:creator" content="@charlesyiu_">
 	<meta name="twitter:card" content="find my socials">
 	<script> if (!["yiu.ch", "localhost"].includes(location.hostname)) { window.location.href = "https://yiu.ch"; }; </script>
-	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple.png?v=5">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/32x32.png?v=5">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon/16x16.png?v=5">
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/icon/apple.png?v=5">
+	<link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/32x32.png?v=5">
+	<link rel="icon" type="image/png" sizes="16x16" href="/assets/icon/16x16.png?v=5">
 	<link rel="manifest" href="/site.webmanifest">
 	<style>
 		* {
 			font-family: Verdana, Geneva, Tahoma, sans-serif;
 			text-align: center;
+			font-weight: bold;
+			user-select: none;
 		}
 		html, body {
 			height: 100%;
-			padding: 0;
-			margin: 0;
+			padding: unset;
+			margin: unset;
+		}
+		header {
+			width: 100%;
+			height: 25%;
+			background-color: hsl(40, 82%, 67%);
 			display: flex;
-			align-items: center;
+			flex-flow: column-reverse;
+			margin-bottom: 50px;
+		}
+		header > img {
+			user-select: none;
+			width: 100px;
+			padding-left: 10%;
+			transform: translateY(50%);
+			object-fit: contain;
+		}
+
+		section.contacts > div.twitter { background-color: hsl(211, 74%, 59%); }
+		section.contacts > div.whatsapp { background-color: hsl(132, 69%, 65%); }
+		section.contacts > div.gmail { background-color: hsl(7, 60%, 52%); }
+		section.contacts > div.github { background-color: hsl(0, 0%, 0%); }
+
+		section.contacts > div {
+			width: fit-content;
+			padding: 2vw;
+			border-radius: 10px;
+			margin: 5px;
+			display: inline-block;
+		}
+		section.contacts > div:hover > a {
+			text-decoration: underline !important;
+		}
+		section.contacts > div > * { vertical-align: middle; }
+		section.contacts > div > a {
+			color: hsl(0, 0%, 100%);
+			font-size: 3.5vw;
+			line-height: 0px;
+			text-decoration: none;
+		}
+		section.contacts > div > img {
 			justify-content: center;
-			flex-flow: column;
+			margin-right: 1vw;
+			height: 4vw;
 		}
-		body > h1 {
-			font-size: 48px;
-			line-height: 20px;
+		section.contacts { margin-top: 75px;}
+		@media screen and (min-width: 500px) {
+			section.contacts > div { padding: 10px; }
+			section.contacts > div > a { font-size: 17.5px; }
+			section.contacts > div > img {
+				margin-right: 5px;
+				height: 20px;
+			}
 		}
-		body > div { line-height: 34px; }
-		body > div > a {
-			font-size: 16px;
-			color: hsl(0, 0%, 0%);
-			transition-duration: 0.1s;
-			text-decoration: none;
+		@media screen and (max-width: 400px) {
+			section.contacts > div { padding: 10px; }
+			section.contacts > div > a { font-size: 14px; }
+			section.contacts > div > img {
+				margin-right: 5px;
+				height: 17.5px;
+			}
 		}
-		body > div > a:hover { text-decoration: underline !important; }
-		body > div > a:active {
-			color: hsl(0, 0%, 50%);
-			text-decoration: none;
+
+		section.activity {
+			cursor: pointer;
+			margin-top: 40px;
+			transition-duration: 250ms;
+			transition-property: opacity;
 		}
+		section.activity:hover {
+			opacity: 0.7;
+		}
+		section.activity > img.date {
+			position: absolute;
+			float: left;
+			height: 56px;
+			padding: 20px;
+			padding-top: 33px;
+			padding-left: 10px;
+			padding-right: 10px;
+			background-color: hsl(0, 0%, 100%);
+			left: 0px;
+		}
+		section.activity > img.main {
+			float: right;
+			margin-right: 32px;
+			overflow: scroll;
+		}
+		@media screen and (min-width: 682px) { 
+			section.activity > img.main {
+				margin-left: auto !important;
+				margin-right: auto !important;
+				float: none !important;
+			}
+			section.activity > img.date { display: none; }
+		}
+
+		footer {
+			position: fixed;
+			width: 100%;
+			background-color: hsla(0, 0%, 0%, 0.05);
+			padding: 1px;
+			bottom: 0px;
+		}
+		footer > p > span.divider {
+			font-weight: normal;
+			user-select: none;
+		}
+		footer > p > span.underline { text-decoration: underline; }
+		footer > p > a { color: hsl(0, 0%, 0%); }
+		@media screen and (max-width: 365px) { footer > p { font-size: 4.4vw; } }
+
+		.clickable {
+			cursor: pointer;
+			transition-duration: 250ms;
+			transition-property: opacity;
+		}
+		.clickable:hover { opacity: 0.65; }
 	</style>
-	<script>
-		window.onload = () => {
-			var selections = document.querySelectorAll("div > a");
-			var currentSelectionIndex = NaN;
-			window.onkeydown = event => {
-				event = event || window.event;
-				if (event.code == "Tab") {
-					event.preventDefault();
-					currentSelectionIndex = isNaN(currentSelectionIndex) ? 0 : currentSelectionIndex >= selections.length - 1 ? 0 : currentSelectionIndex + 1;
-					for (var selectionIndex = 0; selectionIndex < selections.length; selectionIndex++) {
-						if (selectionIndex == currentSelectionIndex) selections.item(currentSelectionIndex).style.textDecoration = "underline";
-						else selections.item(selectionIndex).style.textDecoration = "none";
-					}
-					document.body.style.cursor = "none";
-					document.body.style.pointerEvents = "none";
-				} else if (event.code == "Enter" || event.code == "Space") {
-					event.preventDefault();
-					if (isNaN(currentSelectionIndex)) {
-						currentSelectionIndex = 0;
-						return selections.item(0).style.textDecoration = "underline";
-					}
-					var target = selections.item(currentSelectionIndex);
-					target.click();
-					target.style.color = "hsl(0, 0%, 50%)";
-					setTimeout(() => { target.style.color = "hsl(0, 0%, 0%)"; }, 750);
-					document.body.style.cursor = "none";
-					document.body.style.pointerEvents = "none";
-				}
-			};
-			window.onmousemove = event => {
-				document.body.style.cursor = "auto";
-				document.body.style.pointerEvents = "auto";
-				currentSelectionIndex = NaN;
-				for (var selectionIndex = 0; selectionIndex < selections.length; selectionIndex++) { selections.item(selectionIndex).style.textDecoration = "none"; }
-			};
-		};
-	</script>
 </head>
 <body>
-	<h1>charles</h1>
-	<div>
-		<a href="https://twitter.com/charlesyiu_" rel="noopener">twitter</a>
-		<a href="https://wa.me/12265333668" rel="noopener">whatsapp</a><br>
-		<a href="https://t.me/charlesyiu" rel="noopener">telegram</a>
-		<a href="https://www.npmjs.com/~charlesyiu" rel="noopener">npm</a><br>
-		<a href="https://github.com/charlesyiu" rel="noopener">github</a>
-		<a href="https://signal.me/#p/12265333668" rel="noopener">signal</a><br>
-		<a href="mailto:w@yiu.ch" rel="noopener">w@yiu.ch</a><br>
-	</div>
+	<header><img draggable="false" src="/assets/icon/512x512.png" alt="charles' profile photo"></header>
+	<main>
+		<section class="contacts">
+			<div class="clickable twitter">
+				<img draggable="false" src="/assets/logo/twitter.svg" alt="twitter's logo">
+				<a href="https://twitter.com/charlesyiu_" rel="noopener">twitter</a>
+			</div>
+			<div class="clickable whatsapp">
+				<img draggable="false" src="/assets/logo/whatsapp.svg" alt="whatsapp's logo">
+				<a href="https://wa.me/12265333668" rel="noopener">whatsapp</a><br>
+			</div>
+			<div class="clickable gmail">
+				<img draggable="false" src="/assets/logo/gmail.svg" alt="gmail's logo">
+				<a href="mailto:contact@yiu.ch" rel="noopener">mail@yiu.ch</a><br>
+			</div>
+			<div class="clickable github">
+				<img draggable="false" src="/assets/logo/github.png" alt="github's logo">
+				<a href="https://github.com/charlesyiu" rel="noopener">github</a>
+			</div>
+		</section>
+		<section class="clickable activity" hidden>
+			<img class="date" src="/assets/activity-date.png" draggable="false"/>
+			<img class="main" src="https://ghchart.rshah.org/charlesyiu" alt="charles' github activity" draggable="false"/>
+			<script>
+				(() => {
+					const parentElement = document.currentScript.parentElement;
+					parentElement.addEventListener("click", event => window.location.href = "https://github.com/charlesyiu");
+
+					let dateElementLoaded = false;
+					let mainElementLoaded = false;
+					function elementLoaded(name) {
+						if (name === "date") dateElementLoaded = true;
+						else if (name === "main") mainElementLoaded = true;
+						if (dateElementLoaded && mainElementLoaded) parentElement.hidden = false;
+					}
+					parentElement.querySelector("img.date").addEventListener("load", () => elementLoaded("date"));
+					parentElement.querySelector("img.main").addEventListener("load", () => elementLoaded("main"));
+				})()
+			</script>
+		</section>
+	</main>
+	<footer>
+		<p>
+			made by <span class="underline">charles</span>
+			<span class="divider"> | </span>
+			open <a href="https://github.com/charlesyiu/charlesyiu" class="clickable">source</a>
+			<span class="divider"> | </span> 2022
+		</p>
+	</footer>
 </body>
 </html>

@@ -1,15 +1,15 @@
 {
-    "name":"Charles Yiu",
-    "short_name":"CharlesY",
-    "description": "Charles Yiu's socials",
+    "name":"charles yiu",
+    "short_name":"charles",
+    "description": "charles yiu's webpage",
     "icons": [
         {
-            "src":"/favicon/192x192.png",
+            "src":"/assets/icon/192x192.png",
             "sizes":"192x192",
             "type":"image/png"
         },
         {
-            "src":"/favicon/512x512.png",
+            "src":"/assets/icon/512x512.png",
             "sizes":"512x512",
             "type":"image/png"
         }
