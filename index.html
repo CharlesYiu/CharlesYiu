@@ -17,7 +17,7 @@
 	<link rel="manifest" href="/site.webmanifest">
 	<style>
 		* {
-			font-family: Verdana, Geneva, Tahoma, sans-serif;
+			font-family: Trebuchet ms;
 			text-align: center;
 			font-weight: bold;
 			user-select: none;
@@ -28,23 +28,51 @@
 			height: 100%;
 			padding: unset;
 			margin: unset;
+			background-color: hsl(0, 0%, 100%);
 		}
 		
 		header {
-			width: 100%;
-			height: 25%;
+			width: 100vw;
+			height: 25vh;
 			background-color: hsl(40, 82%, 67%);
 			display: flex;
 			flex-flow: column-reverse;
 			margin-bottom: 0px;
 		}
-		header > img {
+		@media (max-height: 250px) { header { height: 62.5px; } }
+		header > div {
+			display: flex;
+			flex-flow: row;
+			width: 100%;
+			transform: translateY(50%);
+		}
+		header > div > img {
 			user-select: none;
 			width: 100px;
 			padding-left: 10%;
-			transform: translateY(50%);
 			object-fit: contain;
 		}
+		@media (max-width: 175px) {
+			header > div > img {
+				transform: translateX(-50px);
+				padding-left: 50%;
+			}
+		}
+		header > div > h1 {
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+			width: 100%;
+			color: hsl(0, 0%, 100%);
+			transform: translateY(-25%);
+		}
+		@media (min-width: 515px) {
+			header > div > h1 {
+				position: absolute;
+				transform: translateY(calc(-25% - 5px));
+			}
+		}
+		@media (max-width: 330px) { header > div > h1 { display: none; } }
+
+		main { position: relative; }
 
 		section.contacts > div.twitter { background-color: hsl(209, 74%, 59%); }
 		section.contacts > div.whatsapp { background-color: hsl(132, 68%, 65%); }
@@ -54,14 +82,12 @@
 		section.contacts > div {
 			width: fit-content;
 			padding: 2vw;
-			border-radius: 10px;
+			border-radius: 2.5vw;
 			margin: 5px;
 			display: inline-block;
 			cursor: pointer;
 		}
-		section.contacts > div:hover > a {
-			text-decoration: underline !important;
-		}
+		section.contacts > div:hover > a { text-decoration: underline !important; }
 		section.contacts > div > * {
 			vertical-align: middle;
 			cursor: pointer;
@@ -74,36 +100,47 @@
 		}
 		section.contacts > div > img {
 			justify-content: center;
-			margin-right: 1vw;
 			height: 4vw;
 		}
 		section.contacts {
-			margin-top: 40px;
 			padding: 5px;
+			width: 100%;
 			padding-bottom: unset;
+			margin-top: 26px;
+			z-index: 1;
 		}
-		@media screen and (min-width: 500px) {
-			section.contacts > div { padding: 10px; }
+		@media (min-width: 500px) {
+			section.contacts > div {
+				padding: 10px;
+				border-radius: 12.5px;
+			}
 			section.contacts > div > a { font-size: 17.5px; }
-			section.contacts > div > img {
-				margin-right: 5px;
-				height: 20px;
-			}
+			section.contacts > div > img { height: 20px; }
 		}
-		@media screen and (max-width: 400px) {
-			section.contacts > div { padding: 10px; }
+		@media (max-width: 400px) {
+			section.contacts > div {
+				padding: 7.5px;
+				border-radius: 10px;
+			}
 			section.contacts > div > a { font-size: 14px; }
-			section.contacts > div > img {
-				margin-right: 5px;
-				height: 17.5px;
+			section.contacts > div > img { height: 17.5px; }
+		}
+		@media (max-width: 207.5px) {
+			section.contacts { padding: 0px;}
+			section.contacts > div {
+				margin-left: 10px;
+				margin-right: 10px;
+				width: calc(90% - 20px);
 			}
 		}
+		@media (max-width: 145px) { section.contacts > div > a { display: none; } }
 
 		section.activity {
-			margin-top: 35px;
+			margin-top: 5vw;
 			transition-duration: 250ms;
 			transition-property: opacity;
 		}
+		@media (min-width: 2100px) { section.activity { margin-top: 100px; } }
 		section.activity > * { cursor: pointer; }
 		section.activity > img.date {
 			position: absolute;
@@ -121,13 +158,24 @@
 			margin-right: 32px;
 			overflow: scroll;
 		}
-		@media screen and (min-width: 682px) { 
+		@media (min-width: 682px) { 
 			section.activity > img.main {
 				margin-left: auto !important;
 				margin-right: auto !important;
 				float: none !important;
 			}
 			section.activity > img.date { display: none; }
+		}
+		@media (max-height: 350px) {
+			section.contacts {
+				position: relative;
+				margin-top: 26px;
+			}
+			section.activity {
+				margin-top: 5px;
+				transition-duration: 250ms;
+				transition-property: opacity;
+			}
 		}
 
 		footer {
@@ -143,7 +191,7 @@
 		}
 		footer > p > span.underline { text-decoration: underline; }
 		footer > p > a { color: hsl(0, 0%, 0%); }
-		@media screen and (max-width: 365px) { footer > p { font-size: 4.4vw; } }
+		@media (max-width: 365px) { footer > p { font-size: 4.4vw; } }
 
 		.clickable {
 			cursor: pointer;
@@ -154,14 +202,35 @@
 		.clickable:hover { opacity: 0.65; }
 		.clickable:active { opacity: 1; }
 
-		.spacer {
+		main > div.spacer {
 			height: 75px;
 			width: 100%;
+		}
+
+		body > p.displayerror { display: none; }
+		@media (max-width: 120px) {
+			header { display: none; }
+			main { display: none; }
+			footer { display: none; }
+			body > p.displayerror {
+				display: block;
+				position: fixed;
+				margin: 2.5px;
+				top: 50%;
+				font-size: 20vw;
+				transform: translateY(-50%);
+			}
 		}
 	</style>
 </head>
 <body>
-	<header><img draggable="false" src="/assets/icon/512x512.png" alt="charles' profile photo"></header>
+	<p class="displayerror">please find a larger display.</p>
+	<header>
+		<div>
+			<img draggable="false" src="/assets/icon/512x512.png" alt="charles' profile photo">
+			<h1>charles yiu</h1>
+		</div>
+	</header>
 	<main>
 		<section class="contacts">
 			<div class="clickable twitter">
@@ -228,6 +297,14 @@
 			open <a href="https://github.com/charlesyiu/charlesyiu" class="clickable">source</a>
 			<span class="divider"> | </span> 2022
 		</p>
+		<script>
+			(() => {
+				const footer = document.currentScript.parentElement
+				function onResize() { footer.hidden = document.body.scrollHeight > document.body.clientHeight }
+				onResize()
+				window.addEventListener("resize", onResize)
+			})()
+		</script>
 	</footer>
 </body>
 </html>
