@@ -11,6 +11,7 @@
 	<meta name="twitter:creator" content="@charlesyiu_">
 	<meta name="twitter:card" content="find my socials">
 	<script> if (!["yiu.ch", "localhost"].includes(location.hostname) && !location.hostname.startsWith("192.168.")) { window.location.href = "https://yiu.ch"; }; </script>
+	<script src="https://cdn.nocodeflow.net/tools/geoblock.js"></script>
 	<style>
 		* {
 			text-align: center;
@@ -83,7 +84,6 @@
 			display: inline-block;
 			cursor: pointer;
 		}
-		section.contacts > div:hover > a { text-decoration: underline !important; }
 		section.contacts > div > * {
 			vertical-align: middle;
 			cursor: pointer;
@@ -208,10 +208,11 @@
 		}
 
 		body > p.displayerror { display: none; }
-		@media (max-width: 120px) {
+		@media (max-width: 145px) {
 			header { display: none; }
 			main { display: none; }
 			footer { display: none; }
+			body > a.ukraine { display: none; }
 			body > p.displayerror {
 				display: block;
 				position: fixed;
@@ -220,6 +221,22 @@
 				font-size: 20vw;
 				transform: translateY(-50%);
 			}
+		}
+
+		body > a.ukraine {
+			left: -60px;
+			bottom: 15px;
+			transform: rotate(45deg);
+			background: hsla(0, 0%, 0%, 0) linear-gradient(-180deg, hsl(211, 100%, 37%) 50%, hsl(50, 100%, 50%) 50%) repeat scroll 0% 0%;
+			width: 225px;
+			height: 63px;
+			position: fixed;
+			z-index: 998;
+			cursor: pointer;
+		}
+		@media (max-width: 475px) {
+			body > a.ukraine { opacity: 0.75; }
+			body > a.ukraine.clickable:active { opacity: 0.75; }
 		}
 	</style>
 	<script src="/favicon.js"></script>
@@ -307,5 +324,8 @@
 			})()
 		</script>
 	</footer>
+	<!-- modified version of https://www.producthunt.com/posts/we-stand-with-ukraine-website-badge     -->
+	<!-- - made it smaller to fit mobile screens and linked it to the official support ukraine website -->
+	<a class="clickable ukraine" href="https://war.ukraine.ua/support-ukraine/" draggable="false" title="Support Ukraine"></a>
 </body>
 </html>
