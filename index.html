@@ -235,6 +235,8 @@
 			body > a.ukraine { opacity: 0.75; }
 			body > a.ukraine.clickable:active { opacity: 0.75; }
 		}
+		/* temp fix, add autoscaling based on width and height in the future */
+		@media (max-height: 144px) { body > a.ukraine { display: none; } }
 	</style>
 	<script src="/favicon.js"></script>
 </head>
