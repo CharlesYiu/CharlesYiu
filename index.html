@@ -27,6 +27,7 @@
 			background-color: hsl(0, 0%, 100%);
 			font-family: Verdana, Geneva, Tahoma, sans-serif;
 		}
+		@media (max-height: 400px) { body { height: calc(100% + 25px); } }
 		
 		header {
 			width: 100vw;
@@ -168,6 +169,7 @@
 			}
 			section.activity {
 				margin-top: 5px;
+				margin-bottom: 25px;
 				transition-duration: 250ms;
 				transition-property: opacity;
 			}
@@ -202,11 +204,6 @@
 		.clickable:hover { opacity: 0.65; }
 		.clickable:active { opacity: 1; }
 
-		main > div.spacer {
-			height: 60px;
-			width: 100%;
-		}
-
 		body > p.displayerror { display: none; }
 		@media (max-width: 145px) {
 			header { display: none; }
@@ -234,7 +231,7 @@
 			z-index: 998;
 			cursor: pointer;
 		}
-		@media (max-width: 475px) {
+		@media (max-width: 475px), (max-height: 500px) {
 			body > a.ukraine { opacity: 0.75; }
 			body > a.ukraine.clickable:active { opacity: 0.75; }
 		}
@@ -306,7 +303,6 @@
 				})();
 			</script>
 		</section>
-		<div class="spacer"></div>
 	</main>
 	<footer>
 		<p>
