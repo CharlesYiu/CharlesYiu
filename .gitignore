@@ -1,2 +1,5 @@
 .*
 !.gitignore
+tests
+route.json
+_worker.js

@@ -11,7 +11,7 @@
 	<meta name="twitter:creator" content="@charlesyiu_">
 	<meta name="twitter:card" content="find my socials">
 	<script> if (!["yiu.ch", "localhost"].includes(location.hostname) && !location.hostname.startsWith("192.168.")) { window.location.href = "https://yiu.ch"; }; </script>
-	<script src="https://cdn.nocodeflow.net/tools/geoblock.js"></script>
+	<!-- <script src="https://cdn.nocodeflow.net/tools/geoblock.js"></script> -->
 	<style>
 		* {
 			text-align: center;
@@ -238,18 +238,27 @@
 		}
 		/* temp fix, add autoscaling based on width and height in the future */
 		@media (max-height: 144px) { body > a.ukraine { display: none; } }
+
+		iframe.null {
+			position: fixed;
+			left: 0px;
+			top: 0px;
+			width: 100%;
+			height: 100%;
+			z-index: 999;
+		}
 	</style>
 	<script src="/favicon.js"></script>
 </head>
 <body>
-	<p class="displayerror">please find a larger display.</p>
-	<header>
+	<p class="main displayerror">please find a larger display.</p>
+	<header class="main">
 		<div>
 			<img draggable="false" src="/assets/icon/profile.png" alt="charles' profile photo">
 			<h1>charles yiu</h1>
 		</div>
 	</header>
-	<main>
+	<main class="main">
 		<section class="contacts">
 			<div class="clickable twitter">
 				<img draggable="false" src="/assets/logo/twitter.svg" alt="twitter's logo">
@@ -307,7 +316,7 @@
 			</script>
 		</section>
 	</main>
-	<footer>
+	<footer class="main">
 		<p>
 			made by <span class="underline">charles</span>
 			<span class="divider"> | </span>
@@ -327,6 +336,31 @@
 	</footer>
 	<!-- modified version of https://www.producthunt.com/posts/we-stand-with-ukraine-website-badge     -->
 	<!-- - made it smaller to fit mobile screens and linked it to the official support ukraine website -->
-	<a class="clickable ukraine" href="https://war.ukraine.ua/support-ukraine/" draggable="false" title="Support Ukraine"></a>
+	<a class="main clickable ukraine" href="https://war.ukraine.ua/support-ukraine/" draggable="false" title="Support Ukraine"></a>
+	<div>
+		<!-- easter egg - type "null" to access the placeholder site my parked domains-->
+		<iframe class="null" src="about:blank" hidden></iframe>
+		<script>
+			if (!("ontouchstart" in window)) {
+				const frame = document.currentScript.parentElement.querySelector("iframe")
+				let typed = ""
+				function listener(event) {
+					if (event.key.length === 1) typed += event.key
+					if (typed.endsWith("null") && frame.hidden) {
+						typed = ""
+						frame.addEventListener("load", _ => {
+							frame.hidden = false
+							document.title = "placeholder."
+							const mainElements = document.querySelectorAll(".main")
+							mainElements.forEach(mainElement => mainElement.remove())
+						})
+						frame.src = "https://null.yiu.ch/"
+						window.removeEventListener("keydown", listener)
+					}
+				}
+				window.addEventListener("keydown", listener)
+			} else document.currentScript.parentElement.remove()
+		</script>
+	</div>
 </body>
 </html>

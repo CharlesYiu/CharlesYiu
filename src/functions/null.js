@@ -1,0 +1,1 @@
+export async function onRequest(_) { return Response.redirect("https://null.yiu.ch") }
