@@ -16,6 +16,7 @@
 		* {
 			text-align: center;
 			font-weight: bold;
+			text-transform: lowercase;
 			user-select: none;
 			-webkit-user-select: none;
 			cursor: default;
@@ -135,7 +136,7 @@
 		}
 		@media (max-width: 145px) { section.contacts > div > a { display: none; } }
 
-		section.activity {
+		/* section.activity {
 			margin-top: 5vw;
 			transition-duration: 250ms;
 			transition-property: opacity;
@@ -158,14 +159,14 @@
 			margin-right: 32px;
 			overflow: scroll;
 		}
-		@media (min-width: 682px) { 
+		@media (min-width: 582px) {
 			section.activity > img.main {
 				margin-left: auto !important;
 				margin-right: auto !important;
 				float: none !important;
 			}
 			section.activity > img.date { display: none; }
-		}
+		} */
 		@media (max-height: 350px) {
 			section.contacts {
 				position: relative;
@@ -250,8 +251,50 @@
 			height: 100%;
 			z-index: 999;
 		}
+
+		/* new github calender styling */
+		section.activity {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			margin-top: 5vw;
+		}
+		section.activity * { cursor: pointer; }
+		section.activity > div.day {
+			display: none;
+			background-color: white;
+			position: fixed;
+			padding: 1px 5px 1px 15px;
+			height: 120px;
+			transform: translateX(15px) translateY(0px);
+		}
+		section.activity > div.day > p {
+			transform: translateY(18px);
+			color: hsl(0, 0%, 50%);
+			text-align: left;
+		}
+		section.activity > div.container svg.js-calendar-graph-svg { float: right; }
+		section.activity > div.container div.float-left, section.activity > div.container div.float-right, section.activity > div.container div.contrib-column { display: none; }
+		section.activity > div.container rect.ContributionCalendar-day[data-level='0'] { fill: hsl(0, 0%, 90%); }
+		section.activity > div.container rect.ContributionCalendar-day[data-level='1'] { fill: hsl(90, 70%, 65%); }
+		section.activity > div.container rect.ContributionCalendar-day[data-level='2'] { fill: hsl(90, 70%, 45%); }
+		section.activity > div.container rect.ContributionCalendar-day[data-level='3'] { fill: hsl(90, 70%, 25%); }
+		section.activity > div.container rect.ContributionCalendar-day[data-level='4'] { fill: hsl(90, 70%, 5%); }
+		section.activity > div.container text.ContributionCalendar-label, section.activity > .day > p {
+			fill: hsl(0, 0%, 50%);
+			font-size: 12px;
+		}
+		@media (max-width: 850px) {
+			section.activity {
+				display: block;
+				transform: translateX(-15px);
+			}
+			section.activity > div.day { display: block; }
+		}
 	</style>
 	<script src="./favicon.js"></script>
+	<script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
 </head>
 <body>
 	<p class="main displayerror">please find a larger display.</p>
@@ -298,8 +341,8 @@
 				})();
 			</script>
 		</section>
-		<section class="clickable activity" hidden>
-			<img class="date" src="./assets/activity-date.png" draggable="false"/>
+		<section class="clickable activity">
+			<!-- <img class="date" src="./assets/activity-date.png" draggable="false"/>
 			<img class="main" src="https://ghchart.rshah.org/charlesyiu" alt="charles' github activity" draggable="false"/>
 			<script>
 				(() => {
@@ -320,8 +363,23 @@
 						elementLoaded("main");
 					}, 7500);
 				})();
+			</script> -->
+			
+			<!-- new github calendar implementation -->
+			<div class="day">
+				<p>Mon</p>
+				<p>Wed</p>
+				<p>Fri</p>
+			</div>
+			<div class="container"></div>
+			<script>
+				(() => {
+					GitHubCalendar("section.activity > .container", "charlesyiu");
+					document.currentScript.parentElement.addEventListener("click", event => window.location.href = "https://github.com/charlesyiu");
+				})()
 			</script>
 		</section>
+
 	</main>
 	<footer class="main">
 		<p>
