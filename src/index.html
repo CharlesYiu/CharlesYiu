@@ -71,13 +71,16 @@
 		@media (max-width: 330px) { header > div > h1 { display: none; } }
 
 		main { position: relative; }
-		@media (max-width: 875px) { main { background-color: white; } }
+		@media (max-width: 1025px) { main { background-color: white; } }
 
 		section.contacts > div.twitter { background-color: hsl(209, 74%, 59%); }
 		section.contacts > div.whatsapp { background-color: hsl(132, 68%, 65%); }
 		section.contacts > div.gmail { background-color: hsl(7, 67%, 55%); }
 		section.contacts > div.github { background-color: hsl(0, 0%, 0%); }
 		section.contacts > div.discord { background-color: hsl(236, 77%, 64%); }
+
+		section.contacts > div.notion { background-color: hsl(210, 5%, 93%); }
+		section.contacts > div.notion > a { color: hsl(0, 0%, 0%); }
 		section.contacts > div {
 			width: fit-content;
 			padding: 2vw;
@@ -248,33 +251,37 @@
 			z-index: 999;
 		}
 	</style>
-	<script src="/favicon.js"></script>
+	<script src="./favicon.js"></script>
 </head>
 <body>
 	<p class="main displayerror">please find a larger display.</p>
 	<header class="main">
 		<div>
-			<img draggable="false" src="/assets/icon/profile.png" alt="charles' profile photo">
+			<img draggable="false" src="./assets/icon/profile.png" alt="charles' profile photo">
 			<h1>charles yiu</h1>
 		</div>
 	</header>
 	<main class="main">
 		<section class="contacts">
 			<div class="clickable twitter">
-				<img draggable="false" src="/assets/logo/twitter.svg" alt="twitter's logo">
+				<img draggable="false" src="./assets/logo/twitter.svg" alt="twitter's logo">
 				<a href="https://twitter.com/charlesyiu_" rel="noopener">twitter</a>
 			</div>
 			<div class="clickable whatsapp">
-				<img draggable="false" src="/assets/logo/whatsapp.svg" alt="whatsapp's logo">
+				<img draggable="false" src="./assets/logo/whatsapp.svg" alt="whatsapp's logo">
 				<a href="https://wa.me/12265333668" rel="noopener">whatsapp</a><br>
 			</div>
 			<div class="clickable gmail">
-				<img draggable="false" src="/assets/logo/gmail.svg" alt="gmail's logo">
+				<img draggable="false" src="./assets/logo/gmail.svg" alt="gmail's logo">
 				<a href="mailto:contact@yiu.ch" rel="noopener">mail@yiu.ch</a><br>
 			</div>
 			<div class="clickable github">
-				<img draggable="false" src="/assets/logo/github.png" alt="github's logo">
+				<img draggable="false" src="./assets/logo/github.png" alt="github's logo">
 				<a href="https://github.com/charlesyiu" rel="noopener">github</a>
+			</div>
+			<div class="clickable notion">
+				<img draggable="false" src="./assets/logo/notion.png" alt="notion's logo">
+				<a href="https://n.yiu.ch" rel="noopener">notion</a>
 			</div>
 			<!-- <div class="clickable discord">
 				<img draggable="false" src="/assets/logo/discord.png" alt=discord's logo">
@@ -292,7 +299,7 @@
 			</script>
 		</section>
 		<section class="clickable activity" hidden>
-			<img class="date" src="/assets/activity-date.png" draggable="false"/>
+			<img class="date" src="./assets/activity-date.png" draggable="false"/>
 			<img class="main" src="https://ghchart.rshah.org/charlesyiu" alt="charles' github activity" draggable="false"/>
 			<script>
 				(() => {
@@ -322,7 +329,7 @@
 			<span class="divider"> | </span>
 			open <a href="https://github.com/charlesyiu/charlesyiu" class="clickable">source</a>
 			<span class="divider"> | </span>
-			<a href="/privacy.html" class="clickable">privacy policy</a>
+			<a href="./privacy.html" class="clickable">privacy policy</a>
 			<span class="divider"> | </span> 2022
 		</p>
 		<script>
@@ -344,7 +351,7 @@
 			if (!("ontouchstart" in window)) {
 				const frame = document.currentScript.parentElement.querySelector("iframe")
 				let typed = ""
-				function listener(event) {
+				const listener = (event) => {
 					if (event.key.length === 1) typed += event.key
 					if (typed.endsWith("null") && frame.hidden) {
 						typed = ""
