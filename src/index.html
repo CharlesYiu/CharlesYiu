@@ -1,142 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>charles yiu</title>
-	<meta name="og:title" content="charles yiu">
-	<meta name="description" content="find socials and accounts for charles yiu">
-	<meta name="og:description" content="find socials and accounts for charles yiu">
-	<meta name="twitter:creator" content="@charlesyiu_">
-	<meta name="twitter:card" content="find my socials">
-	<script> if (!["yiu.ch", "localhost"].includes(location.hostname) && !location.hostname.startsWith("192.168.")) { window.location.href = "https://yiu.ch"; }; </script>
-	<!-- <script src="https://cdn.nocodeflow.net/tools/geoblock.js"></script> -->
-	<style>
-		* {
-			text-align: center;
-			font-weight: bold;
-			text-transform: lowercase;
-			user-select: none;
-			-webkit-user-select: none;
-			cursor: default;
-		}
-		html, body {
-			height: 100%;
-			padding: unset;
-			margin: unset;
-			background-color: hsl(0, 0%, 100%);
-			font-family: Verdana, Geneva, Tahoma, sans-serif;
-		}
-		@media (max-height: 400px) { body { height: calc(100% + 25px); } }
-		
-		header {
-			width: 100vw;
-			height: 25vh;
-			background-color: hsl(40, 82%, 67%);
-			display: flex;
-			flex-flow: column-reverse;
-			margin-bottom: 0px;
-		}
-		@media (max-height: 250px) { header { height: 62.5px; } }
-		header > div {
-			display: flex;
-			flex-flow: row;
-			width: 100%;
-			transform: translateY(50%);
-		}
-		header > div > img {
-			user-select: none;
-			width: 100px;
-			padding-left: 10%;
-			object-fit: contain;
-		}
-		@media (max-width: 175px) {
-			header > div > img {
-				transform: translateX(-50px);
-				padding-left: 50%;
-			}
-		}
-		header > div > h1 {
-			font-family: Verdana, Geneva, Tahoma, sans-serif;
-			width: 100%;
-			color: hsl(0, 0%, 100%);
-			transform: translateY(-25%);
-		}
-		@media (min-width: 515px) {
-			header > div > h1 {
-				position: absolute;
-				transform: translateY(calc(-25% - 5px));
-			}
-		}
-		@media (max-width: 330px) { header > div > h1 { display: none; } }
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>charles yiu</title>
+        <meta name="og:title" content="charles yiu" />
+        <meta
+            name="description"
+            content="find socials and accounts for charles yiu"
+        />
+        <meta
+            name="og:description"
+            content="find socials and accounts for charles yiu"
+        />
+        <meta name="twitter:creator" content="@charlesyiu_" />
+        <meta name="twitter:card" content="find my socials" />
+        <script>
+            if (
+                !["yiu.ch", "localhost"].includes(location.hostname) &&
+                !location.hostname.startsWith("192.168.")
+            ) {
+                window.location.href = "https://yiu.ch";
+            }
+        </script>
+        <!-- <script src="https://cdn.nocodeflow.net/tools/geoblock.js"></script> -->
+        <style>
+            * {
+                text-align: center;
+                font-weight: bold;
+                text-transform: lowercase;
+                user-select: none;
+                -webkit-user-select: none;
+                cursor: default;
+            }
+            html,
+            body {
+                height: 100%;
+                padding: unset;
+                margin: unset;
+                background-color: hsl(0, 0%, 100%);
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            @media (max-height: 400px) {
+                body {
+                    height: calc(100% + 25px);
+                }
+            }
 
-		main { position: relative; }
-		@media (max-width: 1025px) { main { background-color: white; } }
+            header {
+                width: 100vw;
+                height: 25vh;
+                background-color: hsl(40, 82%, 67%);
+                display: flex;
+                flex-flow: column-reverse;
+                margin-bottom: 0px;
+            }
+            @media (max-height: 250px) {
+                header {
+                    height: 62.5px;
+                }
+            }
+            header > div {
+                display: flex;
+                flex-flow: row;
+                width: 100%;
+                transform: translateY(50%);
+            }
+            header > div > img {
+                user-select: none;
+                width: 100px;
+                padding-left: 10%;
+                object-fit: contain;
+            }
+            @media (max-width: 175px) {
+                header > div > img {
+                    transform: translateX(-50px);
+                    padding-left: 50%;
+                }
+            }
+            header > div > h1 {
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                width: 100%;
+                color: hsl(0, 0%, 100%);
+                transform: translateY(-25%);
+            }
+            @media (min-width: 515px) {
+                header > div > h1 {
+                    position: absolute;
+                    transform: translateY(calc(-25% - 5px));
+                }
+            }
+            @media (max-width: 330px) {
+                header > div > h1 {
+                    display: none;
+                }
+            }
 
-		section.contacts > div.twitter { background-color: hsl(209, 74%, 59%); }
-		section.contacts > div.whatsapp { background-color: hsl(132, 68%, 65%); }
-		section.contacts > div.gmail { background-color: hsl(7, 67%, 55%); }
-		section.contacts > div.github { background-color: hsl(0, 0%, 0%); }
-		section.contacts > div.discord { background-color: hsl(236, 77%, 64%); }
+            main {
+                position: relative;
+            }
+            @media (max-width: 1025px) {
+                main {
+                    background-color: white;
+                }
+            }
 
-		section.contacts > div.notion { background-color: hsl(210, 5%, 93%); }
-		section.contacts > div.notion > a { color: hsl(0, 0%, 0%); }
-		section.contacts > div {
-			width: fit-content;
-			padding: 2vw;
-			border-radius: 2.5vw;
-			margin: 5px;
-			display: inline-block;
-			cursor: pointer;
-		}
-		section.contacts > div > * {
-			vertical-align: middle;
-			cursor: pointer;
-		}
-		section.contacts > div > a {
-			color: hsl(0, 0%, 100%);
-			font-size: 3.5vw;
-			line-height: 0px;
-			text-decoration: none;
-			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-		}
-		section.contacts > div > img {
-			justify-content: center;
-			height: 4vw;
-		}
-		section.contacts {
-			width: 100%;
-			padding-bottom: unset;
-			margin-top: 26px;
-			z-index: 1;
-		}
-		@media (min-width: 500px) {
-			section.contacts > div {
-				padding: 10px;
-				border-radius: 12.5px;
-			}
-			section.contacts > div > a { font-size: 17.5px; }
-			section.contacts > div > img { height: 20px; }
-		}
-		@media (max-width: 400px) {
-			section.contacts > div {
-				padding: 7.5px;
-				border-radius: 10px;
-			}
-			section.contacts > div > a { font-size: 14px; }
-			section.contacts > div > img { height: 17.5px; }
-		}
-		@media (max-width: 207.5px) {
-			section.contacts > div {
-				margin-left: 10px;
-				margin-right: 10px;
-				width: calc(90% - 20px);
-			}
-		}
-		@media (max-width: 145px) { section.contacts > div > a { display: none; } }
+            section.contacts > div.twitter {
+                background-color: hsl(209, 74%, 59%);
+            }
+            section.contacts > div.whatsapp {
+                background-color: hsl(132, 68%, 65%);
+            }
+            section.contacts > div.gmail {
+                background-color: hsl(7, 67%, 55%);
+            }
+            section.contacts > div.github {
+                background-color: hsl(0, 0%, 0%);
+            }
+            section.contacts > div.discord {
+                background-color: hsl(236, 77%, 64%);
+            }
 
-		/* section.activity {
+            section.contacts > div.notion {
+                background-color: hsl(210, 5%, 93%);
+            }
+            section.contacts > div.notion > a {
+                color: hsl(0, 0%, 0%);
+            }
+            section.contacts > div {
+                width: fit-content;
+                padding: 2vw;
+                border-radius: 2.5vw;
+                margin: 5px;
+                display: inline-block;
+                cursor: pointer;
+            }
+            section.contacts > div > * {
+                vertical-align: middle;
+                cursor: pointer;
+            }
+            section.contacts > div > a {
+                color: hsl(0, 0%, 100%);
+                font-size: 3.5vw;
+                line-height: 0px;
+                text-decoration: none;
+                font-family: "Gill Sans", "Gill Sans MT", Calibri,
+                    "Trebuchet MS", sans-serif;
+            }
+            section.contacts > div > img {
+                justify-content: center;
+                height: 4vw;
+            }
+            section.contacts {
+                width: 100%;
+                padding-bottom: unset;
+                margin-top: 26px;
+                z-index: 1;
+            }
+            @media (min-width: 500px) {
+                section.contacts > div {
+                    padding: 10px;
+                    border-radius: 12.5px;
+                }
+                section.contacts > div > a {
+                    font-size: 17.5px;
+                }
+                section.contacts > div > img {
+                    height: 20px;
+                }
+            }
+            @media (max-width: 400px) {
+                section.contacts > div {
+                    padding: 7.5px;
+                    border-radius: 10px;
+                }
+                section.contacts > div > a {
+                    font-size: 14px;
+                }
+                section.contacts > div > img {
+                    height: 17.5px;
+                }
+            }
+            @media (max-width: 207.5px) {
+                section.contacts > div {
+                    margin-left: 10px;
+                    margin-right: 10px;
+                    width: calc(90% - 20px);
+                }
+            }
+            @media (max-width: 145px) {
+                section.contacts > div > a {
+                    display: none;
+                }
+            }
+
+            /* section.activity {
 			margin-top: 5vw;
 			transition-duration: 250ms;
 			transition-property: opacity;
@@ -167,182 +226,283 @@
 			}
 			section.activity > img.date { display: none; }
 		} */
-		@media (max-height: 350px) {
-			section.contacts {
-				position: relative;
-				margin-top: 26px;
-			}
-			section.activity {
-				margin-top: 5px;
-				margin-bottom: 25px;
-				transition-duration: 250ms;
-				transition-property: opacity;
-			}
-		}
+            @media (max-height: 350px) {
+                section.contacts {
+                    position: relative;
+                    margin-top: 26px;
+                }
+                section.activity {
+                    margin-top: 5px;
+                    margin-bottom: 25px;
+                    transition-duration: 250ms;
+                    transition-property: opacity;
+                }
+            }
 
-		footer {
-			position: fixed;
-			width: 100%;
-			background-color: hsla(0, 0%, 0%, 0.05);
-			padding: 1px;
-			bottom: 0px;
-			padding-left: 5px;
-			padding-right: 5px;
-		}
-		footer > p {
-			font-size: 10px;
-		}
-		footer > p > span.divider {
-			font-weight: normal;
-			user-select: none;
-		}
-		footer > p > span.underline { text-decoration: underline; }
-		footer > p > a { color: hsl(0, 0%, 0%); }
-		/* @media (max-width: 800px) { footer > p { font-size: 2vw; } } */
+            footer {
+                position: fixed;
+                width: 100%;
+                background-color: hsla(0, 0%, 0%, 0.05);
+                padding: 1px;
+                bottom: 0px;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+            footer > p {
+                font-size: 10px;
+            }
+            footer > p > span.divider {
+                font-weight: normal;
+                user-select: none;
+            }
+            footer > p > span.underline {
+                text-decoration: underline;
+            }
+            footer > p > a {
+                color: hsl(0, 0%, 0%);
+            }
+            /* @media (max-width: 800px) { footer > p { font-size: 2vw; } } */
 
-		.clickable {
-			cursor: pointer;
-			transition-duration: 250ms;
-			transition-property: opacity;
-			opacity: 1;
-		}
-		.clickable:hover { opacity: 0.65; }
-		.clickable:active { opacity: 1; }
+            .clickable {
+                cursor: pointer;
+                transition-duration: 250ms;
+                transition-property: opacity;
+                opacity: 1;
+            }
+            .clickable:hover {
+                opacity: 0.65;
+            }
+            .clickable:active {
+                opacity: 1;
+            }
 
-		body > p.displayerror { display: none; }
-		@media (max-width: 145px) {
-			header { display: none; }
-			main { display: none; }
-			footer { display: none; }
-			body > a.ukraine { display: none; }
-			body > p.displayerror {
-				display: block;
-				position: fixed;
-				margin: 2.5px;
-				top: 50%;
-				font-size: 20vw;
-				transform: translateY(-50%);
-			}
-		}
+            body > p.displayerror {
+                display: none;
+            }
+            @media (max-width: 145px) {
+                header {
+                    display: none;
+                }
+                main {
+                    display: none;
+                }
+                footer {
+                    display: none;
+                }
+                body > a.ukraine {
+                    display: none;
+                }
+                body > p.displayerror {
+                    display: block;
+                    position: fixed;
+                    margin: 2.5px;
+                    top: 50%;
+                    font-size: 20vw;
+                    transform: translateY(-50%);
+                }
+            }
 
-		body > a.ukraine {
-			left: -60px;
-			bottom: 15px;
-			transform: rotate(45deg);
-			background: hsla(0, 0%, 0%, 0) linear-gradient(-180deg, hsl(211, 100%, 37%) 50%, hsl(50, 100%, 50%) 50%) repeat scroll 0% 0%;
-			width: 225px;
-			height: 63px;
-			position: fixed;
-			z-index: 998;
-			cursor: pointer;
-		}
-		@media (max-width: 475px), (max-height: 500px) {
-			body > a.ukraine { opacity: 0.75; }
-			body > a.ukraine.clickable:active { opacity: 0.75; }
-		}
-		/* temp fix, add autoscaling based on width and height in the future */
-		@media (max-height: 144px) { body > a.ukraine { display: none; } }
+            body > a.ukraine {
+                left: -60px;
+                bottom: 15px;
+                transform: rotate(45deg);
+                background: hsla(0, 0%, 0%, 0)
+                    linear-gradient(
+                        -180deg,
+                        hsl(211, 100%, 37%) 50%,
+                        hsl(50, 100%, 50%) 50%
+                    )
+                    repeat scroll 0% 0%;
+                width: 225px;
+                height: 63px;
+                position: fixed;
+                z-index: 998;
+                cursor: pointer;
+            }
+            @media (max-width: 475px), (max-height: 500px) {
+                body > a.ukraine {
+                    opacity: 0.75;
+                }
+                body > a.ukraine.clickable:active {
+                    opacity: 0.75;
+                }
+            }
+            /* temp fix, add autoscaling based on width and height in the future */
+            @media (max-height: 144px) {
+                body > a.ukraine {
+                    display: none;
+                }
+            }
 
-		iframe.null {
-			position: fixed;
-			left: 0px;
-			top: 0px;
-			width: 100%;
-			height: 100%;
-			z-index: 999;
-		}
+            iframe.null {
+                position: fixed;
+                left: 0px;
+                top: 0px;
+                width: 100%;
+                height: 100%;
+                z-index: 999;
+            }
 
-		/* new github calender styling */
-		section.activity {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			width: 100%;
-			margin-top: 5vw;
-		}
-		section.activity * { cursor: pointer; }
-		section.activity > div.day {
-			display: none;
-			background-color: white;
-			position: fixed;
-			padding: 1px 5px 1px 15px;
-			height: 120px;
-			transform: translateX(15px) translateY(0px);
-		}
-		section.activity > div.day > p {
-			transform: translateY(18px);
-			color: hsl(0, 0%, 50%);
-			text-align: left;
-		}
-		section.activity > div.container svg.js-calendar-graph-svg { float: right; }
-		section.activity > div.container div.float-left, section.activity > div.container div.float-right, section.activity > div.container div.contrib-column { display: none; }
-		section.activity > div.container rect.ContributionCalendar-day[data-level='0'] { fill: hsl(0, 0%, 90%); }
-		section.activity > div.container rect.ContributionCalendar-day[data-level='1'] { fill: hsl(90, 70%, 65%); }
-		section.activity > div.container rect.ContributionCalendar-day[data-level='2'] { fill: hsl(90, 70%, 45%); }
-		section.activity > div.container rect.ContributionCalendar-day[data-level='3'] { fill: hsl(90, 70%, 25%); }
-		section.activity > div.container rect.ContributionCalendar-day[data-level='4'] { fill: hsl(90, 70%, 5%); }
-		section.activity > div.container text.ContributionCalendar-label, section.activity > .day > p {
-			fill: hsl(0, 0%, 50%);
-			font-size: 12px;
-		}
-		@media (max-width: 850px) {
-			section.activity {
-				display: block;
-				transform: translateX(-15px);
-			}
-			section.activity > div.day { display: block; }
-		}
-	</style>
-	<script src="./favicon.js"></script>
-	<script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
-</head>
-<body>
-	<p class="main displayerror">please find a larger display.</p>
-	<header class="main">
-		<div>
-			<img draggable="false" src="./assets/icon/profile.png" alt="charles' profile photo">
-			<h1>charles yiu</h1>
-		</div>
-	</header>
-	<main class="main">
-		<section class="contacts">
-			<div class="clickable twitter">
-				<img draggable="false" src="./assets/logo/twitter.svg" alt="twitter's logo">
-				<a href="https://twitter.com/charlesyiu_" rel="noopener">twitter</a>
-			</div>
-			<div class="clickable whatsapp">
-				<img draggable="false" src="./assets/logo/whatsapp.svg" alt="whatsapp's logo">
-				<a href="https://wa.me/12265333668" rel="noopener">whatsapp</a><br>
-			</div>
-			<div class="clickable gmail">
-				<img draggable="false" src="./assets/logo/gmail.svg" alt="gmail's logo">
-				<a href="mailto:contact@yiu.ch" rel="noopener">mail@yiu.ch</a><br>
-			</div>
-			<div class="clickable github">
-				<img draggable="false" src="./assets/logo/github.png" alt="github's logo">
-				<a href="https://github.com/charlesyiu" rel="noopener">github</a>
-			</div>
-			<div class="clickable notion">
-				<img draggable="false" src="./assets/logo/notion.png" alt="notion's logo">
-				<a href="https://n.yiu.ch" rel="noopener">notion</a>
-			</div>
-			<!-- <div class="clickable discord">
+            /* new github calender styling */
+            section.activity {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                margin-top: 5vw;
+            }
+            section.activity * {
+                cursor: pointer;
+            }
+            section.activity > div.day {
+                display: none;
+                background-color: white;
+                position: fixed;
+                padding: 1px 5px 1px 15px;
+                height: 120px;
+                transform: translateX(15px) translateY(0px);
+            }
+            section.activity > div.day > p {
+                transform: translateY(18px);
+                color: hsl(0, 0%, 50%);
+                text-align: left;
+            }
+            section.activity > div.container svg.js-calendar-graph-svg {
+                float: right;
+            }
+            section.activity > div.container div.float-left,
+            section.activity > div.container div.float-right,
+            section.activity > div.container div.contrib-column {
+                display: none;
+            }
+            section.activity
+                > div.container
+                rect.ContributionCalendar-day[data-level="0"] {
+                fill: hsl(0, 0%, 90%);
+            }
+            section.activity
+                > div.container
+                rect.ContributionCalendar-day[data-level="1"] {
+                fill: hsl(90, 70%, 65%);
+            }
+            section.activity
+                > div.container
+                rect.ContributionCalendar-day[data-level="2"] {
+                fill: hsl(90, 70%, 45%);
+            }
+            section.activity
+                > div.container
+                rect.ContributionCalendar-day[data-level="3"] {
+                fill: hsl(90, 70%, 25%);
+            }
+            section.activity
+                > div.container
+                rect.ContributionCalendar-day[data-level="4"] {
+                fill: hsl(90, 70%, 5%);
+            }
+            section.activity > div.container text.ContributionCalendar-label,
+            section.activity > .day > p {
+                fill: hsl(0, 0%, 50%);
+                font-size: 12px;
+            }
+            @media (max-width: 850px) {
+                section.activity {
+                    display: block;
+                    transform: translateX(-15px);
+                }
+                section.activity > div.day {
+                    display: block;
+                }
+            }
+        </style>
+        <script src="./favicon.js"></script>
+        <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+    </head>
+    <body>
+        <p class="main displayerror">please find a larger display.</p>
+        <header class="main">
+            <div>
+                <img
+                    draggable="false"
+                    src="./assets/icon/profile.png"
+                    alt="charles' profile photo"
+                />
+                <h1>charles yiu</h1>
+            </div>
+        </header>
+        <main class="main">
+            <section class="contacts">
+                <div class="clickable twitter">
+                    <img
+                        draggable="false"
+                        src="./assets/logo/twitter.svg"
+                        alt="twitter's logo"
+                    />
+                    <a href="https://twitter.com/charlesyiu_" rel="noopener"
+                        >twitter</a
+                    >
+                </div>
+                <div class="clickable whatsapp">
+                    <img
+                        draggable="false"
+                        src="./assets/logo/whatsapp.svg"
+                        alt="whatsapp's logo"
+                    />
+                    <a href="https://wa.me/12265333668" rel="noopener"
+                        >whatsapp</a
+                    ><br />
+                </div>
+                <div class="clickable gmail">
+                    <img
+                        draggable="false"
+                        src="./assets/logo/gmail.svg"
+                        alt="gmail's logo"
+                    />
+                    <a href="mailto:contact@yiu.ch" rel="noopener"
+                        >mail@yiu.ch</a
+                    ><br />
+                </div>
+                <div class="clickable github">
+                    <img
+                        draggable="false"
+                        src="./assets/logo/github.png"
+                        alt="github's logo"
+                    />
+                    <a href="https://github.com/charlesyiu" rel="noopener"
+                        >github</a
+                    >
+                </div>
+                <div class="clickable notion">
+                    <img
+                        draggable="false"
+                        src="./assets/logo/notion.png"
+                        alt="notion's logo"
+                    />
+                    <a href="https://n.yiu.ch" rel="noopener">notion</a>
+                </div>
+                <!-- <div class="clickable discord">
 				<img draggable="false" src="/assets/logo/discord.png" alt=discord's logo">
 				<a href="https://discord.gg/qnt8vgFW9D" rel="noopener">cy#8192</a>
 			</div> -->
-			<script>
-				(() => {
-					const contacts = document.currentScript.parentElement.children;
-					for (let index = 0; index < contacts.length; index++) contacts.item(index).addEventListener("click", event => {
-						const link = event.target.querySelector("a") ?? event.target.nextElementSibling;
-						if (link === null) return
-						link.click();
-					});
-				})();
-			</script>
-		</section>
-		<section class="clickable activity">
-			<!-- <img class="date" src="./assets/activity-date.png" draggable="false"/>
+                <script>
+                    (() => {
+                        const contacts =
+                            document.currentScript.parentElement.children;
+                        for (let index = 0; index < contacts.length; index++)
+                            contacts
+                                .item(index)
+                                .addEventListener("click", (event) => {
+                                    const link =
+                                        event.target.querySelector("a") ??
+                                        event.target.nextElementSibling;
+                                    if (link === null) return;
+                                    link.click();
+                                });
+                    })();
+                </script>
+            </section>
+            <section class="clickable activity">
+                <!-- <img class="date" src="./assets/activity-date.png" draggable="false"/>
 			<img class="main" src="https://ghchart.rshah.org/charlesyiu" alt="charles' github activity" draggable="false"/>
 			<script>
 				(() => {
@@ -364,68 +524,96 @@
 					}, 7500);
 				})();
 			</script> -->
-			
-			<!-- new github calendar implementation -->
-			<div class="day">
-				<p>Mon</p>
-				<p>Wed</p>
-				<p>Fri</p>
-			</div>
-			<div class="container"></div>
-			<script>
-				(() => {
-					GitHubCalendar("section.activity > .container", "charlesyiu");
-					document.currentScript.parentElement.addEventListener("click", event => window.location.href = "https://github.com/charlesyiu");
-				})()
-			</script>
-		</section>
 
-	</main>
-	<footer class="main">
-		<p>
-			made by <span class="underline">charles</span>
-			<span class="divider"> | </span>
-			open <a href="https://github.com/charlesyiu/charlesyiu" class="clickable">source</a>
-			<span class="divider"> | </span>
-			<a href="./privacy.html" class="clickable">privacy policy</a>
-			<span class="divider"> | </span> 2022
-		</p>
-		<script>
-			(() => {
-				const footer = document.currentScript.parentElement
-				function onResize() { footer.hidden = document.body.scrollHeight > document.body.clientHeight }
-				onResize()
-				window.addEventListener("resize", onResize)
-			})() 
-		</script>
-	</footer>
-	<!-- modified version of https://www.producthunt.com/posts/we-stand-with-ukraine-website-badge     -->
-	<!-- - made it smaller to fit mobile screens and linked it to the official support ukraine website -->
-	<a class="main clickable ukraine" href="https://war.ukraine.ua/support-ukraine/" draggable="false" title="Support Ukraine"></a>
-	<div>
-		<!-- easter egg - type "null" to access the placeholder site my parked domains-->
-		<iframe class="null" src="about:blank" hidden></iframe>
-		<script>
-			if (!("ontouchstart" in window)) {
-				const frame = document.currentScript.parentElement.querySelector("iframe")
-				let typed = ""
-				const listener = (event) => {
-					if (event.key.length === 1) typed += event.key
-					if (typed.endsWith("null") && frame.hidden) {
-						typed = ""
-						frame.addEventListener("load", _ => {
-							frame.hidden = false
-							document.title = "placeholder."
-							const mainElements = document.querySelectorAll(".main")
-							mainElements.forEach(mainElement => mainElement.remove())
-						})
-						frame.src = "https://null.yiu.ch/"
-						window.removeEventListener("keydown", listener)
-					}
-				}
-				window.addEventListener("keydown", listener)
-			} else document.currentScript.parentElement.remove()
-		</script>
-	</div>
-</body>
+                <!-- new github calendar implementation -->
+                <div class="day" hidden>
+                    <p>Mon</p>
+                    <p>Wed</p>
+                    <p>Fri</p>
+                </div>
+                <div class="container"></div>
+                <script>
+                    (() => {
+                        GitHubCalendar(
+                            "section.activity > div.container",
+                            "charlesyiu"
+                        )
+							.then(_ => document.querySelector("section.activity > div.day").hidden = false)
+                        document.currentScript.parentElement.addEventListener(
+                            "click",
+                            (event) =>
+                                (window.location.href =
+                                    "https://github.com/charlesyiu")
+                        );
+                    })();
+                </script>
+            </section>
+        </main>
+        <footer class="main">
+            <p>
+                made by <span class="underline">charles</span>
+                <span class="divider"> | </span>
+                open
+                <a
+                    href="https://github.com/charlesyiu/charlesyiu"
+                    class="clickable"
+                    >source</a
+                >
+                <span class="divider"> | </span>
+                <a href="./privacy.html" class="clickable">privacy policy</a>
+                <span class="divider"> | </span> 2022
+            </p>
+            <script>
+                (() => {
+                    const footer = document.currentScript.parentElement;
+                    function onResize() {
+                        footer.hidden =
+                            document.body.scrollHeight >
+                            document.body.clientHeight;
+                    }
+                    onResize();
+                    window.addEventListener("resize", onResize);
+                })();
+            </script>
+        </footer>
+        <!-- modified version of https://www.producthunt.com/posts/we-stand-with-ukraine-website-badge     -->
+        <!-- - made it smaller to fit mobile screens and linked it to the official support ukraine website -->
+        <a
+            class="main clickable ukraine"
+            href="https://war.ukraine.ua/support-ukraine/"
+            draggable="false"
+            title="Support Ukraine"
+        ></a>
+        <div>
+            <!-- easter egg - type "null" to access the placeholder site my parked domains-->
+            <iframe class="null" src="about:blank" hidden></iframe>
+            <script>
+                if (!("ontouchstart" in window)) {
+                    const frame =
+                        document.currentScript.parentElement.querySelector(
+                            "iframe"
+                        );
+                    let typed = "";
+                    const listener = (event) => {
+                        if (event.key.length === 1) typed += event.key;
+                        if (typed.endsWith("null") && frame.hidden) {
+                            typed = "";
+                            frame.addEventListener("load", (_) => {
+                                frame.hidden = false;
+                                document.title = "placeholder.";
+                                const mainElements =
+                                    document.querySelectorAll(".main");
+                                mainElements.forEach((mainElement) =>
+                                    mainElement.remove()
+                                );
+                            });
+                            frame.src = "https://null.yiu.ch/";
+                            window.removeEventListener("keydown", listener);
+                        }
+                    };
+                    window.addEventListener("keydown", listener);
+                } else document.currentScript.parentElement.remove();
+            </script>
+        </div>
+    </body>
 </html>
