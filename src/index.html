@@ -18,12 +18,15 @@
         <meta name="twitter:card" content="find my socials" />
         <script>
             if (
+                // redirects if location is not a local development server and not the target url
                 !["yiu.ch", "localhost"].includes(location.hostname) &&
-                !location.hostname.startsWith("192.168.")
+                !location.hostname.startsWith("192.168.") &&
+                !location.hostname.startsWith("127.0.0.1")
             ) {
                 window.location.href = "https://yiu.ch";
             }
         </script>
+        
         <!-- <script src="https://cdn.nocodeflow.net/tools/geoblock.js"></script> -->
         <style>
             * {
@@ -319,12 +322,12 @@
                 z-index: 998;
                 cursor: pointer;
             }
-            @media (max-width: 475px), (max-height: 500px) {
+            @media (max-width: 575px), (max-height: 500px) {
                 body > a.ukraine {
-                    opacity: 0.75;
+                    opacity: 0.65;
                 }
                 body > a.ukraine.clickable:active {
-                    opacity: 0.75;
+                    opacity: 0.65;
                 }
             }
             /* temp fix, add autoscaling based on width and height in the future */
@@ -561,7 +564,7 @@
                 >
                 <span class="divider"> | </span>
                 <a href="./privacy.html" class="clickable">privacy policy</a>
-                <span class="divider"> | </span> 2022
+                <span class="divider"> | </span> 2023
             </p>
             <script>
                 (() => {
