@@ -190,38 +190,6 @@
                     display: none;
                 }
             }
-
-            /* section.activity {
-			margin-top: 5vw;
-			transition-duration: 250ms;
-			transition-property: opacity;
-		}
-		@media (min-width: 2100px) { section.activity { margin-top: 100px; } }
-		section.activity > * { cursor: pointer; }
-		section.activity > img.date {
-			position: absolute;
-			float: left;
-			height: 56px;
-			padding: 20px;
-			padding-top: 33px;
-			padding-left: 10px;
-			padding-right: 10px;
-			background-color: hsl(0, 0%, 100%);
-			left: 0px;
-		}
-		section.activity > img.main {
-			float: right;
-			margin-right: 32px;
-			overflow: scroll;
-		}
-		@media (min-width: 582px) {
-			section.activity > img.main {
-				margin-left: auto !important;
-				margin-right: auto !important;
-				float: none !important;
-			}
-			section.activity > img.date { display: none; }
-		} */
             @media (max-height: 350px) {
                 section.contacts {
                     position: relative;
@@ -363,8 +331,12 @@
             }
             section.activity > div.container div.float-left,
             section.activity > div.container div.float-right,
-            section.activity > div.container div.contrib-column {
+            section.activity > div.container div.contrib-column,
+            section.activity > div.container div.graph-before-activity-overview > div {
                 display: none;
+            }
+            section.activity > div.container div.graph-before-activity-overview > div.js-calendar-graph {
+                display: block;
             }
             section.activity > div.container rect.ContributionCalendar-day[data-level="0"] {
                 fill: hsl(0, 0%, 90%);
@@ -452,29 +424,6 @@
                 </script>
             </section>
             <section class="clickable activity">
-                <!-- <img class="date" src="./assets/activity-date.png" draggable="false"/>
-			<img class="main" src="https://ghchart.rshah.org/charlesyiu" alt="charles' github activity" draggable="false"/>
-			<script>
-				(() => {
-					const parentElement = document.currentScript.parentElement;
-					parentElement.addEventListener("click", event => window.location.href = "https://github.com/charlesyiu");
-
-					let dateElementLoaded = false;
-					let mainElementLoaded = false;
-					function elementLoaded(name) {
-						if (name === "date") dateElementLoaded = true;
-						else if (name === "main") mainElementLoaded = true;
-						if (dateElementLoaded && mainElementLoaded) parentElement.hidden = false;
-					}
-					parentElement.querySelector("img.date").addEventListener("load", () => elementLoaded("date"));
-					parentElement.querySelector("img.main").addEventListener("load", () => elementLoaded("main"));
-					setTimeout(() => {
-						elementLoaded("date");
-						elementLoaded("main");
-					}, 7500);
-				})();
-			</script> -->
-
                 <!-- new github calendar implementation -->
                 <div class="day" hidden>
                     <p>Mon</p>
