@@ -3,7 +3,7 @@
 
 Hi, I'm Charles and I share my side-projects to the world through GitHub!  
 I'm an aspiring electrical engineer with a coding hobby, hoping to be a true  
-full-stack developer who designs the hardware to that's powered with software  
+full-stack developer who designs the hardware that's powered with software  
 I wrote up!
 
 
