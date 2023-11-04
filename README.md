@@ -7,8 +7,7 @@ full-stack developer who designs the hardware that's powered with software
 I wrote up!
 
 
-If you have any enquiries, feel free to contact me. I'll get to you every  
-so often.
+If you have any enquiries, feel free to contact me. I'll get to you as soon as possible.
 - [https://yiu.ch](https://yiu.ch)
 - [me@yiu.ch](mailto:me@yiu.ch)
 - [+852 6161 1192](https://wa.me/85261611192) (WhatsApp Preferred)
